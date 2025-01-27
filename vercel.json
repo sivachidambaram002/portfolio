@@ -1,0 +1,20 @@
+{
+  "builds": [
+    {
+      "src": "build/web",
+      "use": "@vercel/static"
+    }
+  ],
+  "build": {
+    "env": {
+      "FLUTTER_HOME": "/tmp/flutter",
+      "PATH": "/tmp/flutter/bin:$PATH"
+    },
+    "commands": [
+      "curl -LO https://storage.googleapis.com/download.flutter.dev/flutter_linux_3.10.0-stable.tar.xz",
+      "tar -xf flutter_linux_3.10.0-stable.tar.xz",
+      "flutter doctor",
+      "flutter build web"
+    ]
+  }
+}
